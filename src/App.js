@@ -48,7 +48,7 @@ export default class App extends React.Component {
     const winner = calculateWinner(current.squares)
 
     const moves = history.map((step, move) => {
-      const desc = move ? 'Go to move #' + move : 'Go to game start'
+      const desc = move ? `${move} に移動する。` : 'ゲームを始める。'
       const handleClick = () => {
         this.jumpTo(move)
       }
@@ -61,9 +61,9 @@ export default class App extends React.Component {
 
     let status
     if (winner) {
-      status = 'Winner: ' + winner
+      status = `勝者: ${winner}`
     } else {
-      status = 'Next player: ' + (this.state.xIsNext ? 'X' : 'O')
+      status = `次のプレイヤー: ${this.state.xIsNext ? 'X' : 'O'}`
     }
 
     return (
