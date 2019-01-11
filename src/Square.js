@@ -1,15 +1,15 @@
 import React from 'react'
-import { css } from 'emotion'
+import styled from '@emotion/styled'
 
 export default function (props) {
   return (
-    <button className={square} onClick={props.onClick}>
+    <Square onClick={props.onClick}>
       {props.value}
-    </button>
+    </Square>
   )
 }
 
-const square = css`
+const Square = styled.button`
   background: #fff;
   border: 1px solid #999;
   float: left;

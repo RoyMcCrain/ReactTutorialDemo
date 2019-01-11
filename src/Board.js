@@ -1,5 +1,5 @@
 import React from 'react'
-import { css } from 'emotion'
+import styled from '@emotion/styled'
 import Square from './Square'
 
 export default function (props) {
@@ -18,26 +18,26 @@ export default function (props) {
 
   return (
     <div>
-      <div className={boardRow}>
+      <BoardRow>
         {renderSquare(0)}
         {renderSquare(1)}
         {renderSquare(2)}
-      </div>
-      <div className={boardRow}>
+      </BoardRow>
+      <BoardRow>
         {renderSquare(3)}
         {renderSquare(4)}
         {renderSquare(5)}
-      </div>
-      <div className={boardRow}>
+      </BoardRow>
+      <BoardRow>
         {renderSquare(6)}
         {renderSquare(7)}
         {renderSquare(8)}
-      </div>
+      </BoardRow>
     </div>
   )
 }
 
-const boardRow = css`
+const BoardRow = styled.div`
   &:after {
     clear: both;
     content: "";

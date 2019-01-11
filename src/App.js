@@ -1,5 +1,5 @@
 import React from 'react'
-import { css } from 'emotion'
+import styled from '@emotion/styled'
 import Board from './Board'
 
 export default class App extends React.Component {
@@ -67,29 +67,29 @@ export default class App extends React.Component {
     }
 
     return (
-      <div className={game}>
-        <div className={gameBoard}>
+      <Game>
+        <GameBoard>
           <Board squares={current.squares} onClick={this.handleClick} />
-        </div>
-        <div className={gameInfo}>
+        </GameBoard>
+        <GameInfo>
           <div>{status}</div>
           <ol>{moves}</ol>
-        </div>
-      </div>
+        </GameInfo>
+      </Game>
     )
   }
 }
-const game = css`
+const Game = styled.div`
   display: flex;
   flex-direction: row;
 `
 
-const gameBoard = css`
+const GameBoard = styled.div`
   display: flex;
   flex-direction: row;
 `
 
-const gameInfo = css`
+const GameInfo = styled.div`
   margin-left: 30px;
 `
 
