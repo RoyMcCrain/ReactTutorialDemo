@@ -1,46 +1,32 @@
-import React from 'react'
-import styled from '@emotion/styled'
-import Square from './Square'
+import React from "react";
+import Square from "./Square";
 
-export default function (props) {
-  const renderSquare = (i) => {
-    const handleClick = (e) => {
-      e.preventDefault()
-      return props.onClick(i)
-    }
-    return (
-      <Square
-        value={props.squares[i]}
-        onClick={handleClick}
-      />
-    )
-  }
+export default function(props) {
+  const renderSquare = i => {
+    const handleClick = e => {
+      e.preventDefault();
+      return props.onClick(i);
+    };
+    return <Square value={props.squares[i]} onClick={handleClick} />;
+  };
 
   return (
     <div>
-      <BoardRow>
+      <div className="board-row">
         {renderSquare(0)}
         {renderSquare(1)}
         {renderSquare(2)}
-      </BoardRow>
-      <BoardRow>
+      </div>
+      <div className="board-row">
         {renderSquare(3)}
         {renderSquare(4)}
         {renderSquare(5)}
-      </BoardRow>
-      <BoardRow>
+      </div>
+      <div className="board-row">
         {renderSquare(6)}
         {renderSquare(7)}
         {renderSquare(8)}
-      </BoardRow>
+      </div>
     </div>
-  )
+  );
 }
-
-const BoardRow = styled.div`
-  &:after {
-    clear: both;
-    content: "";
-    display: table;
-  }
-`

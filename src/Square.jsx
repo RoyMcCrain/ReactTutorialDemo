@@ -1,28 +1,9 @@
-import React from 'react'
-import styled from '@emotion/styled'
+import React from "react";
 
-export default function (props) {
+export default function(props) {
   return (
-    <Square onClick={props.onClick}>
+    <button className="square-button" onClick={props.onClick}>
       {props.value}
-    </Square>
-  )
+    </button>
+  );
 }
-
-const Square = styled.button`
-  background: #fff;
-  border: 1px solid #999;
-  float: left;
-  font-size: 24px;
-  font-weight: bold;
-  line-height: 34px;
-  height: 34px;
-  margin-right: -1px;
-  margin-top: -1px;
-  padding: 0;
-  text-align: center;
-  width: 34px;
-  &:focus {
-    outline: none;
-    }
-`
